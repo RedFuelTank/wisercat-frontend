@@ -1,4 +1,4 @@
-export class Pet {
+export class PetData {
   public id: number
   public ownerUsername : string
   public code : string

@@ -10,20 +10,26 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {JwtInterceptor} from "./jwt.interceptor";
 import {ErrorInterceptor} from "./error.interceptor";
 import { PetsComponent } from './pets/pets.component';
+import { PetFormComponent } from './pet-form/pet-form.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SortableHeaderDirective } from './sortable-header.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    PetsComponent
+    PetsComponent,
+    PetFormComponent,
+    SortableHeaderDirective
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [
     {
