@@ -24,6 +24,9 @@
         <li class="nav-item">
           <a class="nav-link" href="add-pets">Add pets</a>
         </li>
+        <li class="nav-item" *ngIf="isAdmin()">
+          <a class="nav-link" href="all-pets">Show all pets</a>
+        </li>
       </ul>
       <!-- Left links -->
 

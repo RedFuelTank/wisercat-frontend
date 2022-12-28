@@ -20,4 +20,8 @@ export class AppComponent {
   logout() {
     this.authenticationService.logout()
   }
+
+  isAdmin() {
+    return this.authenticationService.isAdmin();
+  }
 }

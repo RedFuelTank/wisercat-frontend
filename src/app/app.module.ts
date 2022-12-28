@@ -13,6 +13,7 @@ import { PetsComponent } from './pets/pets.component';
 import { PetFormComponent } from './pet-form/pet-form.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SortableHeaderDirective } from './sortable-header.directive';
+import { AllPetsComponent } from './all-pets-admin/all-pets.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SortableHeaderDirective } from './sortable-header.directive';
     LoginComponent,
     PetsComponent,
     PetFormComponent,
-    SortableHeaderDirective
+    SortableHeaderDirective,
+    AllPetsComponent
   ],
   imports: [
     HttpClientModule,

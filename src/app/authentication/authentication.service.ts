@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable} from "rxjs";
 import {UserService} from "../user.service";
 import {LoginRequest} from "../model/login-request";
-import {LoginResponse} from "../model/login-response";
+import {LoginResponse, Role} from "../model/login-response";
 import {map} from "rxjs/operators";
 import {Router} from "@angular/router";
 
@@ -38,5 +38,10 @@ export class AuthenticationService {
     localStorage.removeItem("currentUser")
     this.currentUserSubject.next(undefined);
     this.router.navigate(["/home"])
+  }
+
+  isAdmin() {
+    return this.currentUserSubject ? this.currentUserSubject.value?.roles.includes(Role.Admin)
+      : false;
   }
 }
