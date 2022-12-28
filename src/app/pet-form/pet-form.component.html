@@ -1,0 +1,66 @@
+<div class="row d-flex justify-content-center">
+  <div class="col-12 col-md-8 col-xl-4 ">
+    <form class="card p-3 top-buffer-20" [formGroup]="petForm">
+      <div class="form-group top-buffer-10">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" formControlName="name" name="name"
+               placeholder="Enter name">
+        <div [hidden]="petForm.controls['name'].valid || petForm.controls['name'].untouched" class="alert alert-danger">
+          May not be empty
+        </div>
+      </div>
+      <div class="form-group top-buffer-10">
+        <label for="name">Code</label>
+        <input type="text" class="form-control" id="code" formControlName="code" name="code"
+               placeholder="Enter code">
+        <div [hidden]="petForm.controls['code'].valid || petForm.controls['code'].untouched" class="alert alert-danger">
+          May not be empty
+        </div>
+      </div>
+      <div class="form-group top-buffer-10">
+        <label>Type</label>
+        <div class="form-group">
+          <select class="form-control select2 select2-hidden-accessible"
+                  style="width: 100%;"
+                  tabindex="-1"
+                  id="type" formControlName="typeSelector" name="type"
+                  aria-hidden="true">
+            <option selected="selected">Cat</option>
+            <option>Rabbit</option>
+          </select>
+        </div> <!-- /.form-group -->
+      </div>
+      <div class="form-group top-buffer-10">
+        <label>Fur color</label>
+        <div class="form-group">
+          <select class="form-control select2 select2-hidden-accessible"
+                  style="width: 100%;"
+                  tabindex="-1"
+                  id="fur-color" formControlName="furColorSelector" name="fur-color"
+                  aria-hidden="true">
+            <option selected="selected">Brown</option>
+            <option>Black</option>
+          </select>
+        </div> <!-- /.form-group -->
+      </div>
+      <div class="form-group top-buffer-10">
+        <label>Country of origin</label>
+        <div class="form-group">
+          <select class="form-control select2 select2-hidden-accessible"
+                  style="width: 100%;"
+                  tabindex="-1"
+                  id="country-origin" formControlName="countryOriginSelector" name="country-origin"
+                  aria-hidden="true">
+            <option selected="selected">Estonia</option>
+            <option>Finland</option>
+          </select>
+        </div> <!-- /.form-group -->
+      </div>
+
+      <br>
+      <button [disabled]="petForm.invalid" type="submit"
+              class="btn btn-primary grad-yellow" (click)="submit()">Submit
+      </button>
+    </form>
+  </div>
+</div>
