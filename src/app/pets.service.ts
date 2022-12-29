@@ -43,4 +43,8 @@ export class PetsService {
   public deletePet(user: string, id: number) {
     this.http.delete(PetsService.REST_API_SERVER + `/${user}/pets/${id}`).subscribe()
   }
+
+  getPetAdmin(id: number) {
+    return this.http.get<PetData>(PetsService.REST_API_SERVER + `/pets/${id}`)
+  }
 }

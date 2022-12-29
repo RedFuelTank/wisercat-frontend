@@ -47,4 +47,6 @@ export class AllPetsComponent implements OnInit {
       })
   }
 
+  getUrl(pet: PetData) {
+  }
 }

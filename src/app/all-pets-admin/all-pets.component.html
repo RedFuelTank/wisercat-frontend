@@ -7,20 +7,24 @@
         <table class="table table-hover">
           <thead class="thead-light">
           <tr>
-            <th scope="col" sortable="name" (sort)="onSort($event)">Name</th>
+            <th scope="col" sortable="id" (sort)="onSort($event)">Id</th>
+            <th scope="col" sortable="name" (sort)="onSort($event)" class="text-center" width="150">Name</th>
             <th scope="col" sortable="code" (sort)="onSort($event)" width="150">Code</th>
             <th scope="col" sortable="type" (sort)="onSort($event)" class="text-center" width="100">Type</th>
             <th scope="col" sortable="furColor" (sort)="onSort($event)" class="text-center" width="150">Fur color</th>
             <th scope="col" sortable="ownerUsername" (sort)="onSort($event)" class="text-center" width="150">Owner</th>
+            <th scope="col" sortable="countryOrigin" (sort)="onSort($event)" class="text-center" width="150">Country of Origin</th>
           </tr>
           </thead>
           <tbody>
           <tr *ngFor="let pet of petsOnPage">
+            <td>{{ pet.id }}</td>
             <td>{{ pet.name }}</td>
             <td>{{ pet.code }}</td>
             <td class="text-center">{{ pet.type }}</td>
             <td class="text-center">{{ pet.furColor}}</td>
             <td class="text-center">{{pet.ownerUsername}}</td>
+            <td class="text-center">{{ pet.countryOrigin }}</td>
           </tr>
           </tbody>
         </table>

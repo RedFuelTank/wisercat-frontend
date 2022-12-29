@@ -11,6 +11,7 @@
             <th scope="col" sortable="code" (sort)="onSort($event)" width="150">Code</th>
             <th scope="col" sortable="type" (sort)="onSort($event)" class="text-center" width="100">Type</th>
             <th scope="col" sortable="furColor" (sort)="onSort($event)" class="text-center" width="150">Fur color</th>
+            <th scope="col" sortable="countryOrigin" (sort)="onSort($event)" class="text-center" width="150">Country of Origin</th>
           </tr>
           </thead>
           <tbody>
@@ -19,6 +20,7 @@
             <td>{{ pet.code }}</td>
             <td class="text-center">{{ pet.type }}</td>
             <td class="text-center">{{ pet.furColor}}</td>
+            <td class="text-center">{{ pet.countryOrigin }}</td>
             <td class="text-center">
               <button class="btn btn-primary grad-yellow" (click)="getUrl(pet)" href="pet">Edit</button>
             </td>
