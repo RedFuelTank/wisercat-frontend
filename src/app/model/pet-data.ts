@@ -18,17 +18,32 @@ export class PetData {
   }
 }
 
-enum CountryOrigin {
+export enum CountryOrigin {
   Estonia = "ESTONIA",
   Finland = "FINLAND"
 }
 
-enum FurColor {
+export const CountryOriginMapping : Record<CountryOrigin, string>= {
+  [CountryOrigin.Estonia]: "Estonia",
+  [CountryOrigin.Finland]: "Finland"
+}
+
+ export enum FurColor {
   Black = "BLACK",
   Brown = "BROWN"
 }
 
-enum PetType {
+export const FurColorMapping: Record<FurColor, string> = {
+  [FurColor.Black]: "Black",
+  [FurColor.Brown]: "Brown"
+}
+
+ export enum PetType {
   Rabbit = "RABBIT",
   Cat = "CAT"
+}
+
+export const PetTypeMapping: Record<PetType, string> = {
+  [PetType.Rabbit]: "Rabbit",
+  [PetType.Cat]: "Cat"
 }

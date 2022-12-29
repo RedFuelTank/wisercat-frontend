@@ -6,6 +6,7 @@ import {PetsComponent} from "./pets/pets.component";
 import {AuthGuard} from "./auth.guard";
 import {PetFormComponent} from "./pet-form/pet-form.component";
 import {AllPetsComponent} from "./all-pets-admin/all-pets.component";
+import {PetComponent} from "./pet/pet.component";
 
 const routes: Routes = [
   {path: "home", component: HomeComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: "my-pets", component: PetsComponent, canActivate: [AuthGuard]},
   {path: "add-pets", component: PetFormComponent, canActivate: [AuthGuard]},
   {path: "all-pets", component: AllPetsComponent, canActivate: [AuthGuard]},
+  {path: "pet/:id", component: PetComponent, canActivate: [AuthGuard]},
   {path: "**", redirectTo: "/home"}
 ];
 

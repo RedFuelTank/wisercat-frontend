@@ -45,4 +45,8 @@ export class PetsComponent implements OnInit {
         this.totalElements = page.totalElements
       })
   }
+
+  getUrl(pet: PetData) {
+    this.route.navigate([`/pet/${pet.id}`]);
+  }
 }

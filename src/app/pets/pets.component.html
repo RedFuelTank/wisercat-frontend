@@ -19,6 +19,9 @@
             <td>{{ pet.code }}</td>
             <td class="text-center">{{ pet.type }}</td>
             <td class="text-center">{{ pet.furColor}}</td>
+            <td class="text-center">
+              <button class="btn btn-primary grad-yellow" (click)="getUrl(pet)" href="pet">Edit</button>
+            </td>
           </tr>
           </tbody>
         </table>

@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {PetForm} from "./model/pet-form";
 import {PetsPage} from "./model/PetsPage";
 import {SortColumn, SortDirection} from "./sortable-header.directive";
+import {PetData} from "./model/pet-data";
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,19 @@ export class PetsService {
     return this.http.get<PetsPage>(PetsService.REST_API_SERVER + `/pets?size=${size}&page=${currentPage}`)
   }
 
-  getAllPetsSort(size: number, currentPage: number, column: SortColumn, direction: SortDirection) {
+  public getAllPetsSort(size: number, currentPage: number, column: SortColumn, direction: SortDirection) {
     return this.http.get<PetsPage>(PetsService.REST_API_SERVER + `/pets?size=${size}&page=${currentPage}&sort=${column},${direction}`)
+  }
+
+  public getPet(user: string, id: number) {
+    return this.http.get<PetData>(PetsService.REST_API_SERVER + `/${user}/pets/${id}`)
+  }
+
+  public editPet(user: string, petData: PetData) {
+    this.http.put<any>(PetsService.REST_API_SERVER + `/${user}/pets`, petData).subscribe()
+  }
+
+  public deletePet(user: string, id: number) {
+    this.http.delete(PetsService.REST_API_SERVER + `/${user}/pets/${id}`).subscribe()
   }
 }
